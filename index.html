@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffe6e6; /* Soft blush pink */
+        }
+
+        .card {
+            background: #fffaf0; /* Ivory with a hint of warmth */
+            padding: 20px 30px;
+            border-radius: 15px;
+            border: 2px solid #f08080; /* Light coral */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+
+        .greeting {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #8b0000; /* Dark red for depth */
+        }
+
+        .toggle-button {
+            background-color: #c71585; /* Medium violet-red */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .toggle-button:hover {
+            background-color: #a40068; /* Slightly darker violet-red */
+            transform: scale(1.05); /* Adds a subtle bounce effect */
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #db7093; /* Pale violet red */
+            text-align: left;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 id="greeting" class="greeting">Hi, Ma'am Roan!</h1>
+        <button id="toggleButton" class="toggle-button">OPEN</button>
+        <p id="message" class="message">
+            Hi Ma'am! thank you for sticking with us through thick and thin.
+            We are grateful for your love and support.
+            Thank you for explaining completely your lessons as sometimes I have a hard time understanding certain topics.
+            Merry Christmas and Happy New Year.
+        </p>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const message = document.getElementById('message');
+        const greeting = document.getElementById('greeting');
+
+        toggleButton.addEventListener('click', () => {
+            const isVisible = message.style.display === 'block';
+            message.style.display = isVisible ? 'none' : 'block';
+            toggleButton.textContent = isVisible ? 'OPEN' : 'CLOSE';
+            greeting.textContent = isVisible ? "Hi, Ma'am Roan!" : "Thank you po, ma'am!";
+        });
+    </script>
+</body>
+</html>
